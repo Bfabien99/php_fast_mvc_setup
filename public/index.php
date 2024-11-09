@@ -36,25 +36,39 @@ $router->map('GET', '/home', [\App\Controllers\HomeController::class, 'index']);
 ###### MATCH ROUTE AND TARGET ########
 # match request
 $match = $router->match();
-if (is_array($match)) {
-    if (is_callable($match['target'])) {
-        # if is_callable call the function
-        call_user_func_array($match['target'], $match['params']);
-    } elseif (is_array($match['target']) && count($match['target']) == 2) {
-        # if it's an array, try to find if it's a valid class
-        [$class, $method] = $match['target'];
 
-        if (class_exists($class, true)) {
-            # if it's a valid class, try to find if method is valid
-            $newClasse = new $class;
-            if (method_exists($newClasse, $method)) {
-                # if method is valid, call the method from the class
-                call_user_func_array([$newClasse, $method], $match['params']);
+if (is_array($match)) {
+    $target = $match['target'];
+    $params = $match['params'];
+
+    if (is_callable($target)) {
+        # Call the function directly if the target is callable
+        call_user_func_array($target, $params);
+    } elseif (is_array($target) && count($target) === 2) {
+        # If the target is an array, interpret the first element as the class and the second as the method
+        [$class, $method] = $target;
+
+        if (class_exists($class)) {
+            $controller = new $class();
+            
+            if (method_exists($controller, $method)) {
+                # Call the class method if it exists
+                call_user_func_array([$controller, $method], $params);
+            } else {
+                # Error if the method is not found in the class
+                http_response_code(500);
+                $message = "Error : Method <strong>'{$method}'</strong> not found in <strong>'{$class}'</strong>.";
+                View::render('error/500', ['message' => $message]);
             }
+        } else {
+            # Error if the class is not found
+            http_response_code(500);
+            $message = "Error : Class <strong>'{$class}'</strong> not found.";
+            View::render('error/500', ['message' => $message]);
         }
     }
 } else {
-    # if no route was matched
+    # If no route matches, display a 404 error page
     http_response_code(404);
     View::render('error/404');
 }

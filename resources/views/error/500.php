@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404</title>
+  <title>500</title>
 
   <style>
     * {
@@ -23,6 +22,7 @@
     }
     main {
       max-width: 350px;
+      text-align: center;
     }
     a {
       color: #56BBF9;
@@ -35,13 +35,12 @@
   
   <main>
 
-    <h1 data-test-id="text-404">404</h1>
+    <h1 data-test-id="text-500">500</h1>
 
-    <p>I'm afraid you've found a page that doesn't exist on this site. That can happen when you follow a link to something that has since been deleted. Or the link was incorrect to begin&nbsp;with.</p>
-
-    <p>Sorry about that. We've logged the error for review, in case it's our fault.</p>
-
-    <a href="/">Return Home</a>
+    <p>Oops! Something went wrong on our server.</p>
+    <p>We're working to fix the issue. Please try again later, or contact support if the problem persists.</p>
+    <hr>
+    <p style="color:red"><?= $message; ?></p>
   </main>
 
 </body>
