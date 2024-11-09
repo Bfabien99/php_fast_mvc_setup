@@ -1,4 +1,4 @@
-# Basic MVC Setup
+# fast MVC Setup
 
 ![PHP](https://img.shields.io/badge/PHP-%5E7.4%7C%5E8.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -6,10 +6,10 @@
 ![Dotenv](https://img.shields.io/badge/phpdotenv-%5E5.6-lightgrey)
 
 ## Description
-**Basic MVC Setup** est une structure de base pour un projet PHP suivant le modèle MVC (Modèle-Vue-Contrôleur). Ce projet a été conçu pour fournir une fondation simple, extensible et facile à utiliser pour les développeurs souhaitant travailler avec l’architecture MVC en PHP.
+**fast MVC Setup** est une structure de base pour un projet PHP suivant le modèle MVC (Modèle-Vue-Contrôleur). Ce projet a été conçu pour fournir une fondation simple, extensible et facile à utiliser pour les développeurs souhaitant travailler avec l’architecture MVC en PHP.
 
 ## Table des matières
-- [Basic MVC Setup](#basic-mvc-setup)
+- [fast MVC Setup](#fast-mvc-setup)
   - [Description](#description)
   - [Table des matières](#table-des-matières)
   - [Pré-requis](#pré-requis)
