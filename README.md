@@ -29,7 +29,7 @@ Assurez-vous que votre environnement est correctement configuré pour exécuter 
 1. Clonez le dépôt :
     ```bash
     git clone https://github.com/Bfabien99/php_fast_mvc_setup.git
-    cd basic_mvc_setup
+    cd php_fast_mvc_setup
     ```
 
 2. Installez les dépendances du projet via Composer :
@@ -48,7 +48,11 @@ Le projet est structuré en suivant le modèle MVC :
 ├── app/                 # Contient les fichiers du contrôleur et du modèle
 │   ├── Controllers/     # Contient les contrôleurs
 │   └── Models/          # Contient les modèles
+│   └── Helpers/          # Contient les Helpers
+│       └── View.php          # Classe charger de l'appel des vues
 ├── database/            # Fichiers relatifs à la base de données
+├──     DB.php            # Classe chargée de la connexion 
+                            à la base de données
 ├── resources/            # Fichiers relatifs à la vue
 │   └── views/      # Dossier contenant les vues
 ├── public/              # Dossier public contenant le fichier index.php
