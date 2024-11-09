@@ -53,6 +53,7 @@ Le projet est structuré en suivant le modèle MVC :
 │   └── views/      # Dossier contenant les vues
 ├── public/              # Dossier public contenant le fichier index.php
 │   └── index.php        # Point d'entrée du projet
+├── storage/            # Dossier relatif au stockage
 ├── .env.example         # Exemple de fichier d'environnement
 └── composer.json        # Fichier de configuration de Composer
 
