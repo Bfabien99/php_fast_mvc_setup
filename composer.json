@@ -1,0 +1,17 @@
+{
+    "name": "fabienbrou/basic_mvc_setup",
+    "description": "A basic structure for MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Brou kouadio Stéphane-Fabien",
+            "email": "fabienbrou99@gmail.com"
+        }
+    ],
+    "require": {}
+}
